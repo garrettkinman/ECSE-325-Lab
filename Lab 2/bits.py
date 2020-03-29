@@ -1,6 +1,7 @@
 # This program calculates the number of bits necessary to represent the inputs and the output
 # of the MAC unit.
 # It takes ThuFrilab2-x.txt and ThuFrilab-y.txt as the inputs.
+
 # Author: Garrett Kinman
 
 # ~~~ FUNCTION DECLARATIONS ~~~
@@ -12,19 +13,31 @@ def read_numbers(filename):
     file.close()
     return numbers
 
-# function that takes in a float and returns the minimum number of bits required to represent it
-def find_min_bits_float(num):
+# function that takes in a float and returns the total word length
+# finds W of a given number
+def find_word_length(num):
+    # TODO
+    # split into integer and fractional parts
+    # find lengths of both parts
+    # add those lengths together
+    return
+
+# function that takes in the integer component of a float and returns the minimum number of bits
+# finds W - F
+def find_integer_length(num):
     # TODO
 
     return
 
-def find_min_bits_int(num):
+# function that takes in the fractional component float and returns the minimum number of bits
+def find_fractional_length(num):
     # TODO
-    
+
     return
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
+# input filenames
 input_x_file = "ThuFrilab2-x.txt"
 input_y_file = "ThuFrilab2-y.txt"
 
@@ -35,3 +48,7 @@ input_y = read_numbers(input_y_file)
 # test
 print(input_x[0:10])
 print(input_y[0:10])
+
+# for a given float, we have W, F
+# W: total word length, i.e., the number of bits required for the whole number
+# F: total fractional length, i.e., the number of bits required for the part after the decimal point
