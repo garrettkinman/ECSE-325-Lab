@@ -15,3 +15,11 @@ def read_numbers(filename):
 
 
 # ~~~ PROGRAM STARTS HERE ~~~
+
+input_x_file = 'ThuFrilab2-x.txt'
+input_y_file = 'ThuFrilab2-y.txt'
+
+input_x = read_numbers(input_x_file)
+input_y = read_numbers(input_y_file)
+
+print(input_x[0:10])
