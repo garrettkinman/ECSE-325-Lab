@@ -7,7 +7,7 @@
 
 # function that takes in a file name and returns the list of numbers from within the file
 def read_numbers(filename):
-    file = open(filename, 'r')
+    file = open(filename, "r")
     numbers = file.readline().split()
     file.close()
     return numbers
@@ -16,8 +16,8 @@ def read_numbers(filename):
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
-input_x_file = 'ThuFrilab2-x.txt'
-input_y_file = 'ThuFrilab2-y.txt'
+input_x_file = "ThuFrilab2-x.txt"
+input_y_file = "ThuFrilab2-y.txt"
 
 input_x = read_numbers(input_x_file)
 input_y = read_numbers(input_y_file)
