@@ -13,14 +13,13 @@ def read_numbers(filename):
     file.close()
     return numbers
 
-# function that takes in a float and returns the total word length
-# finds W of a given number
-def find_word_length(num):
-    # TODO
-    # split into integer and fractional parts
-    # find lengths of both parts
-    # add those lengths together
-    return
+# function that takes in a float and returns the total word length and the fractional length
+# finds W, F of a given number
+def find_word_and_fractional_length(num):
+    integer_length = find_integer_length(num)
+    fractional_length = find_fractional_length(num)
+    word_length = integer_length + fractional_length
+    return (word_length, fractional_length)
 
 # function that takes in the integer component of a float and returns the minimum number of bits
 # finds W - F
