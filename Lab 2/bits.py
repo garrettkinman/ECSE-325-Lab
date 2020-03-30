@@ -4,6 +4,8 @@
 
 # Author: Garrett Kinman
 
+import math
+
 # ~~~ FUNCTION DECLARATIONS ~~~
 
 # function that takes in a file name and returns the list of numbers from within the file
@@ -25,7 +27,16 @@ def find_word_and_fractional_length(num):
 # finds W - F
 def find_integer_length(num):
     # TODO
-
+    if (num > 0):
+        if (num < 1):
+            return 1
+        else:
+            return int(math.floor(math.log(num, 2)) + 2)
+    else:
+        if (abs(num) <= 1):
+            return 1
+        else:
+            return int(math.floor(math.log(abs(num), 2)) + 2)
     return
 
 # function that takes in the fractional component float and returns the minimum number of bits
