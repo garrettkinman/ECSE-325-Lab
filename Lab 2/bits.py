@@ -23,10 +23,12 @@ def find_word_and_fractional_length(num):
     word_length = integer_length + fractional_length
     return (word_length, fractional_length)
 
-# function that takes in the integer component of a float and returns the minimum number of bits
+# function that takes in a float and calculates the integer length
 # finds W - F
 def find_integer_length(num):
-    # TODO
+    # if between -1 and 1, only need 1 bit to represent integer portion,
+    # since integer portion is 0
+    # otherwise, take log (absolute value if negative) and add 2 (because these are signed numbers)
     if (num > 0):
         if (num < 1):
             return 1
@@ -39,11 +41,16 @@ def find_integer_length(num):
             return int(math.floor(math.log(abs(num), 2)) + 2)
     return
 
-# function that takes in the fractional component float and returns the minimum number of bits
+# function that takes in a float and calculates the fractional length
+# finds F
 def find_fractional_length(num):
-    # TODO
-
-    return
+    # since multiplying by two is equivalent to left-shift by 1,
+    # keep left-shifting until nothing past the decimal
+    num_bits = 0
+    while ((num % 1) != 0):
+        num_bits += 1
+        num *= 2
+    return num_bits
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
