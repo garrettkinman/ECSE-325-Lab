@@ -87,3 +87,6 @@ print(find_word_and_fractional_length(float(input_x[0])))
 # find word and fractional lengths of all the inputs
 input_x_with_lengths = find_lengths_of_list(input_x)
 input_y_with_lengths = find_lengths_of_list(input_y)
+
+# test
+print(input_x_with_lengths[0:10])
