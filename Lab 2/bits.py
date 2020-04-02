@@ -41,6 +41,16 @@ def find_integer_length(num):
             return int(math.floor(math.log(abs(num), 2)) + 2)
     return
 
+# function that takes in a list of numbers (the numbers are in string form and need to be cast as floats)
+# and returns a list of tuples, where each tuple contains the original number and the word and fractional lengths
+def find_lengths_of_list(list):
+    list_with_lengths = []
+    for num in list:
+        float_num = float(num)
+        word_length, fractional_length = find_word_and_fractional_length(float_num)
+        list_with_lengths.append((float_num, word_length, fractional_length))
+    return list_with_lengths
+
 # function that takes in a float and calculates the fractional length
 # finds F
 def find_fractional_length(num):
@@ -69,3 +79,11 @@ print(input_y[0:10])
 # for a given float, we have W, F
 # W: total word length, i.e., the number of bits required for the whole number
 # F: total fractional length, i.e., the number of bits required for the part after the decimal point
+
+# test
+print(float(input_x[0]))
+print(find_word_and_fractional_length(float(input_x[0])))
+
+# find word and fractional lengths of all the inputs
+input_x_with_lengths = find_lengths_of_list(input_x)
+input_y_with_lengths = find_lengths_of_list(input_y)
