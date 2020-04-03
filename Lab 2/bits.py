@@ -176,3 +176,9 @@ result = find_output_length(input_x_with_lengths, input_y_with_lengths)
 # test
 print(result)
 print(find_word_and_fractional_length(result[0]))
+
+# convert all the x and y inputs to binary
+input_length_x = find_input_length(input_x_with_lengths)
+input_length_y = find_input_length(input_y_with_lengths)
+to_binary(input_x, input_length_x[0], input_length_x[1], "x")
+to_binary(input_y, input_length_y[0], input_length_y[1], "y")
