@@ -89,15 +89,23 @@ def find_output_length(x_list, y_list):
     return (mac, word_length, fractional_length)
 
 # function that takes in a list of tuples of form (num, word_length, fractional_length)
-# and returns an integer that is the maximum word_length of the list
+# and returns the longest word length and the longest fractional length of the list
+# return is a tuple of form (max_word_length, max_fractional_length)
 def find_input_length(list):
-    max_length = 0
+    max_word_length = 0
+    max_fractional_length = 0
     for num, word_length, fractional_length in list:
-        if word_length > max_length:
-            max_length = word_length
-    return max_length
+        if word_length > max_word_length:
+            max_word_length = word_length
+        if fractional_length > max_fractional_length:
+            max_fractional_length = fractional_length
+    return (max_word_length, max_fractional_length)
+
+# function that takes in a list of numbers and converts them all to a specificied
+def to_binary(nums, word_length, fractional_length, filename_tag):
 
 
+    return
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
