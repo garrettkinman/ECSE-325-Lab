@@ -62,6 +62,14 @@ def find_lengths_of_list(list):
         list_with_lengths.append((float_num, word_length, fractional_length))
     return list_with_lengths
 
+# function that takes in a list of tuples of form (num, word_length, fractional_length)
+# and returns a tuple of form (mac, word_length, fractional_length),
+# where mac is the result of the multiply-accumulate operation on list
+def find_output_length(list):
+    # TODO
+    
+    return
+
 # ~~~ PROGRAM STARTS HERE ~~~
 
 # input filenames
