@@ -75,12 +75,16 @@ def find_output_length(x_list, y_list):
     for i in range(len(x_list)):
         mac += (x_list[i][0] * y_list[i][0])
         
+        # temporary values that we use to calculate the new word and fractional lengths down below
+        # otherwise, we'll blow the word length up really high with all the repeated " + 1"s
+        word_length, fractional_length = find_word_and_fractional_length(mac)
+        
         # find the word and fractional lengths for the x(i)*y(i) product
-        temp_length = (x_list[i][1] + y_list[i][1], x_list[i][2] + y_list[i][2])
+        product_length = (x_list[i][1] + y_list[i][1], x_list[i][2] + y_list[i][2])
 
         # find the word and fractional lengths for the addition of the above product and the old mac value
-        word_length = max((temp_length[0], word_length)) + 1
-        fractional_length = max((temp_length[1], fractional_length))
+        word_length = max((product_length[0], word_length)) + 1
+        fractional_length = max((product_length[1], fractional_length))
 
     return (mac, word_length, fractional_length)
 
@@ -113,5 +117,9 @@ input_y_with_lengths = find_lengths_of_list(input_y)
 # test
 print(input_x_with_lengths[0:10])
 
+# find the required lengths for the final result
 result = find_output_length(input_x_with_lengths, input_y_with_lengths)
+
+# test
 print(result)
+print(find_word_and_fractional_length(result[0]))
