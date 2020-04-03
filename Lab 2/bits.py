@@ -123,7 +123,7 @@ def to_binary(nums, word_length, fractional_length, filename_tag):
 # function that takes in a string of binary-encoded negative number
 # and returns the 2s complement form of that number
 def twos_complement(binary_num):
-    num = list(re.sub("\-", "0", binary_num))
+    num = list(re.sub("\-", "", binary_num))
     i = len(num) - 1
 
     # from right to left, don't touch any of the 0s until you hit a 1
