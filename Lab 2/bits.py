@@ -5,6 +5,7 @@
 # Author: Garrett Kinman
 
 import math
+import re
 
 # ~~~ FUNCTION DECLARATIONS ~~~
 
@@ -101,11 +102,44 @@ def find_input_length(list):
             max_fractional_length = fractional_length
     return (max_word_length, max_fractional_length)
 
-# function that takes in a list of numbers and converts them all to a specificied
+# function that takes in a list of numbers and converts them all to binary
+# of a specified word and fractional length
+# writes them to a file with a specified tag to put in the filename
 def to_binary(nums, word_length, fractional_length, filename_tag):
+    file = open("lab2-" + filename_tag + "-fixed-point.txt", "w+")
+    for num in nums:
+        # shift so there is no fractional part
+        # so we can simply create unsigned representation as a string
+        shifted_num = float(num) * (2**fractional_length)
+        binary_num = ("{0:0" + word_length + "b}").format(int(shifted_num))
 
-
+        # if the number is negative, we want to change it to 2s complement form
+        if "-" in binary_num:
+            binary_num = twos_complement(binary_num)
+        file.write(binary_num + " ")
+    file.close()
     return
+
+# function that takes in a string of binary-encoded negative number
+# and returns the 2s complement form of that number
+def twos_complement(binary_num):
+    num = list(re.sub("\-", "0", binary_num))
+    i = len(num) - 1
+
+    # from right to left, don't touch any of the 0s until you hit a 1
+    # keep the first 1 you encounter
+    while (num[i] == "0"):
+        i -= 1
+    i -= 1
+
+    # everything after that first 1 you switch
+    while (i >= 0):
+        if (num[i] == "0"):
+            num[i] = "1"
+        else:
+            num[i] = "0"
+        i -= 1
+    return "".join(num)
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
