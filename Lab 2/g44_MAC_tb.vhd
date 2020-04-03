@@ -7,8 +7,11 @@ use STD.textio.all;
 entity g44_MAC_tb is
 end g44_MAC_tb;
 
-architecture MAC_tb_arch of g44_MAC_tb is
+architecture test of g44_MAC_tb is
 
+    -----------------------------------------------------------------------------
+    -- Declare the Component Under Test
+    -----------------------------------------------------------------------------
     component g44_MAC is
         port(   x       : in    std_logic_vector(8 downto 0);
                 y       : in    std_logic_vector(8 downto 0);
@@ -19,6 +22,9 @@ architecture MAC_tb_arch of g44_MAC_tb is
                 ready   : out   std_logic);                     
     end component g44_MAC;
 
+    -----------------------------------------------------------------------------
+    -- Testbench Internal Signals
+    -----------------------------------------------------------------------------
     file file_VECTORS_X : text;
     file file_VECTORS_Y : text;
     file file_RESULTS : text;
@@ -33,8 +39,8 @@ architecture MAC_tb_arch of g44_MAC_tb is
 
 begin
 
-    -- MAC instance
-    mac_unit : g44_MAC
+    -- instantiate MAC
+    g44_MAC_INST : g44_MAC
     port map (
         x       => x_in,
         y       => y_in,
@@ -45,23 +51,29 @@ begin
         ready   => ready_out
     );
 
-    -- clock simulation
-    clk_gen : process
+    -----------------------------------------------------------------------------
+    -- Clock Generation
+    -----------------------------------------------------------------------------
+    clk_generation : process
     begin
         clk_in <= '1';
         wait for clk_PERIOD / 2;
         clk_in <= '0';
         wait for clk_PERIOD / 2;
-    end process clk_gen;
+    end process clk_generation;
 
-    run_mac : process
+    -----------------------------------------------------------------------------
+    -- Providing Inputs
+    -----------------------------------------------------------------------------
+    feeding_instr : process
     variable v_Iline1 : line;
     variable v_Iline2 : line;
     variable v_Oline : line;
     variable v_x_in : std_logic_vector(9 downto 0);
     variable v_y_in : std_logic_vector(9 downto 0);
     begin
-        N <= "1111101000";
+        -- reset the circuit
+        N <= "1111101000"; -- N = 1000
         rst_in <= '1';
         wait until rising_edge(clk_in);
         wait until rising_edge(clk_in);
@@ -69,6 +81,7 @@ begin
         file_open(file_VECTORS_X, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-x-fixed-point.txt", read_mode);
         file_open(file_VECTORS_Y, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-y-fixed-point.txt", read_mode);
         file_open(file_RESULTS, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-out.txt", write_mode);
+        
         while not endfile(file_VECTORS_X) loop
             readline(file_VECTORS_X, v_Iline1);
             read(v_Iline1, v_x_in);
@@ -87,4 +100,4 @@ begin
 
 
 
-end MAC_tb_arch;
+end test;
