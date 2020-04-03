@@ -111,7 +111,7 @@ def to_binary(nums, word_length, fractional_length, filename_tag):
         # shift so there is no fractional part
         # so we can simply create unsigned representation as a string
         shifted_num = float(num) * (2**fractional_length)
-        binary_num = ("{0:0" + word_length + "b}").format(int(shifted_num))
+        binary_num = ("{0:0" + str(word_length) + "b}").format(int(shifted_num))
 
         # if the number is negative, we want to change it to 2s complement form
         if "-" in binary_num:
@@ -182,3 +182,7 @@ input_length_x = find_input_length(input_x_with_lengths)
 input_length_y = find_input_length(input_y_with_lengths)
 to_binary(input_x, input_length_x[0], input_length_x[1], "x")
 to_binary(input_y, input_length_y[0], input_length_y[1], "y")
+
+# test
+print(input_length_x)
+print(input_length_y)
