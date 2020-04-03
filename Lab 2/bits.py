@@ -88,6 +88,17 @@ def find_output_length(x_list, y_list):
 
     return (mac, word_length, fractional_length)
 
+# function that takes in a list of tuples of form (num, word_length, fractional_length)
+# and returns an integer that is the maximum word_length of the list
+def find_input_length(list):
+    max_length = 0
+    for num, word_length, fractional_length in list:
+        if word_length > max_length:
+            max_length = word_length
+    return max_length
+
+
+
 # ~~~ PROGRAM STARTS HERE ~~~
 
 # input filenames
