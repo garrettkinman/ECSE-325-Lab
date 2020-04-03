@@ -62,13 +62,27 @@ def find_lengths_of_list(list):
         list_with_lengths.append((float_num, word_length, fractional_length))
     return list_with_lengths
 
-# function that takes in a list of tuples of form (num, word_length, fractional_length)
+# function that takes in two lists of tuples of form (num, word_length, fractional_length)
 # and returns a tuple of form (mac, word_length, fractional_length),
-# where mac is the result of the multiply-accumulate operation on list
-def find_output_length(list):
-    # TODO
-    
-    return
+# where mac is the result of the multiply-accumulate operation on the lists
+def find_output_length(x_list, y_list):
+    # mac holds the value of the multiply-accumulate operation
+    # word_length holds the value of the word length required to represent mac
+    # fractional_length holds the value of the fractional length required to represent mac
+    mac = 0
+    word_length = 0
+    fractional_length = 0
+    for i in range(len(x_list)):
+        mac += (x_list[i][0] * y_list[i][0])
+        
+        # find the word and fractional lengths for the x(i)*y(i) product
+        temp_length = (x_list[i][1] + y_list[i][1], x_list[i][2] + y_list[i][2])
+
+        # find the word and fractional lengths for the addition of the above product and the old mac value
+        word_length = max((temp_length[0], word_length)) + 1
+        fractional_length = max((temp_length[1], fractional_length))
+
+    return (mac, word_length, fractional_length)
 
 # ~~~ PROGRAM STARTS HERE ~~~
 
@@ -98,3 +112,6 @@ input_y_with_lengths = find_lengths_of_list(input_y)
 
 # test
 print(input_x_with_lengths[0:10])
+
+result = find_output_length(input_x_with_lengths, input_y_with_lengths)
+print(result)
