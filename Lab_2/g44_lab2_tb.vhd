@@ -75,9 +75,9 @@ feeding_instr : process
  wait until rising_edge(clk_in);
  wait until rising_edge(clk_in);
  rst_in <= '0';
- file_open(file_VECTORS_X, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-x-fixed-point.txt", read_mode);
- file_open(file_VECTORS_Y, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-y-fixed-point.txt", read_mode);
- file_open(file_RESULTS, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab 2\lab2-out.txt", write_mode);
+ file_open(file_VECTORS_X, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab_2\lab2-x-fixed-point.txt", read_mode);
+ file_open(file_VECTORS_Y, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab_2\lab2-y-fixed-point.txt", read_mode);
+ file_open(file_RESULTS, "C:\Users\Wombat\Documents\GitHub\ECSE-325-Lab\Lab_2\lab2-out.txt", write_mode);
  while not endfile(file_VECTORS_X) loop
  	readline(file_VECTORS_X, v_Iline1);
  	read(v_Iline1, v_x_in);
