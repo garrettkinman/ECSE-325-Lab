@@ -4,15 +4,15 @@ use ieee.numeric_std.all;
 use ieee.std_logic_textio.all;
 use STD.textio.all;
 
-entity g44_MAC_tb is
-end g44_MAC_tb;
+entity g44_lab2_tb is
+end g44_lab2_tb;
 
 
-architecture test of g44_MAC_tb is
+architecture test of g44_lab2_tb is
 -----------------------------------------------------------------------------
 -- Declare the Component Under Test
 -----------------------------------------------------------------------------
-component g44_MAC is
+component g44_lab2 is
  port ( x : in std_logic_vector(9 downto 0);
  y : in std_logic_vector(9 downto 0);
  N : in std_logic_vector(9 downto 0);
@@ -20,7 +20,7 @@ component g44_MAC is
  rst : in std_logic;
  mac : out std_logic_vector (22 downto 0);
  ready : out std_logic);
-end component g44_MAC;
+end component g44_lab2;
 -----------------------------------------------------------------------------
 -- Testbench Internal Signals
 -----------------------------------------------------------------------------
@@ -37,7 +37,7 @@ signal mac_out : std_logic_vector (22 downto 0);
 signal ready_out : std_logic;
 
 begin -- Instantiate MAC
- g44_MAC_INST : g44_MAC
+ g44_MAC_INST : g44_lab2
  port map (
  x => x_in,
  y => y_in,
