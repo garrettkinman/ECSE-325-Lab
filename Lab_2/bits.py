@@ -105,8 +105,8 @@ def find_input_length(list):
 # function that takes in a list of numbers and converts them all to binary
 # of a specified word and fractional length
 # writes them to a file with a specified tag to put in the filename
-def to_binary(nums, word_length, fractional_length, filename_tag):
-    file = open("lab2-" + filename_tag + "-fixed-point.txt", "w+")
+def to_binary(nums, word_length, fractional_length, filename):
+    file = open(filename, "w+")
     for num in nums:
         # shift so there is no fractional part
         # so we can simply create unsigned representation as a string
@@ -180,8 +180,8 @@ print(find_word_and_fractional_length(result[0]))
 # convert all the x and y inputs to binary
 input_length_x = find_input_length(input_x_with_lengths)
 input_length_y = find_input_length(input_y_with_lengths)
-to_binary(input_x, input_length_x[0], input_length_x[1], "x")
-to_binary(input_y, input_length_y[0], input_length_y[1], "y")
+to_binary(input_x, input_length_x[0], input_length_x[1], "lab2-x-fixed-point.txt")
+to_binary(input_y, input_length_y[0], input_length_y[1], "lab2-y-fixed-point.txt")
 
 # test
 print(input_length_x)
