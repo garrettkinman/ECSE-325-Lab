@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g44_FIR
-Tue Apr 14 02:30:18 2020
+Tue Apr 14 02:46:24 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -44,7 +44,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 14 02:30:18 2020       ;
+; Analysis & Synthesis Status     ; Successful - Tue Apr 14 02:46:24 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; g44_FIR                                     ;
 ; Top-level Entity Name           ; g44_FIR                                     ;
@@ -164,7 +164,7 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
@@ -280,7 +280,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Tue Apr 14 02:30:03 2020
+    Info: Processing started: Tue Apr 14 02:46:15 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g44_lab3 -c g44_FIR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -297,9 +297,9 @@ Info (21057): Implemented 503 device resources after synthesis - the final resou
     Info (21061): Implemented 446 logic cells
     Info (21062): Implemented 22 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4875 megabytes
-    Info: Processing ended: Tue Apr 14 02:30:18 2020
-    Info: Elapsed time: 00:00:15
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4874 megabytes
+    Info: Processing ended: Tue Apr 14 02:46:24 2020
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 
