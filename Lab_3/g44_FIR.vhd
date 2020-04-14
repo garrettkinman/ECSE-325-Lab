@@ -31,35 +31,31 @@ architecture behavior of g44_FIR is
 
     signal data_pipeline : data_array;
     signal products      : product_array;
-    signal y_long        : std_logic_vector(33 downto 0); -- internal; cut off first 17 bits for y
+    signal sum           : signed(31 downto 0);
     
 begin
 
     fir_process : process (clk, rst)
-
-    variable sum : signed(33 downto 0);
-
     begin
         if rst = '1' then -- asynchronous reset
             data_pipeline <= (others => (others => '0'));
-            y_long <= (others => '0');
+            sum <= (others => '0');
         elsif rising_edge(clk) then
-            data_pipeline <= signed(x) & data_pipeline(0 to 23);
-
-			sum := (others => '0'); -- initialize sum
-			for i in 0 to 24 loop
-				sum := sum + products(i); --add the products
+            sum <= (others => '0'); -- initialize sum
+            
+            -- shuffle data down the pipeline
+            for i in 1 to 24 loop
+                data_pipeline(25 - i) <= data_pipeline(25 - (i + 1));
             end loop;
-            
-            y_long <= std_logic_vector(sum);
-            
+
+            -- calculate output
+			for i in 1 to 25 loop
+				sum <= sum + coef(25 - i) * data_pipeline(25 - i); --add the products
+            end loop;
+           
         end if;
     end process;
 
-	product_calc: for i in 0 to 24 generate
-		products(i) <= (data_pipeline(i) * signed(coef(i))); -- perform the multiplications
-	end generate;
-
-    y <= y_long(16 downto 0); -- trim off the first 17 bits
+    y <= std_logic_vector(sum(31 downto 15)); -- trim off the excess bits
     
 end behavior;
