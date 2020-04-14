@@ -13,7 +13,6 @@ architecture behavior of g44_FIR is
 
     type coefficient_array is array (0 to 24) of signed(15 downto 0); -- for the coefficients
     type data_array is array (0 to 24) of signed (15 downto 0); -- for the x input
-    type product_array is array (0 to 24) of signed (31 downto 0); -- for the products x(i)*b(i)
 
     constant coef : coefficient_array := (  "0000001001110010", "0000000000010001",
                                             "1111111111010011", "1111111011011110",
@@ -30,7 +29,6 @@ architecture behavior of g44_FIR is
                                             "0000000000010001");
 
     signal data_pipeline : data_array;
-    signal products      : product_array;
     signal sum           : signed(31 downto 0);
     
 begin
