@@ -7,7 +7,7 @@ use STD.textio.all;
 entity g44_FIR_tb is
 end g44_FIR_tb;
 
-architecture test of g44_lab2_tb is
+architecture test of g44_FIR_tb is
 -----------------------------------------------------------------------------
 -- Declare the Component Under Test
 -----------------------------------------------------------------------------
@@ -68,7 +68,7 @@ feeding_instr : process
         read(v_Iline, v_x_in);
         x_in <= v_x_in;
 
-        write(v_Oline, mac_out);
+        write(v_Oline, y_out);
         writeline(file_RESULTS, v_Oline);
         wait until rising_edge(clk_in);
     end loop;
