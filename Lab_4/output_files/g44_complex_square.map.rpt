@@ -1,5 +1,5 @@
 Analysis & Synthesis report for g44_complex_square
-Fri Apr 24 12:28:23 2020
+Fri Apr 24 13:32:32 2020
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -16,9 +16,12 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   8. Analysis & Synthesis DSP Block Usage Summary
   9. Registers Removed During Synthesis
  10. General Register Statistics
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 11. Parameter Settings for User Entity Instance: LPM_MULT:mult1
+ 12. Parameter Settings for User Entity Instance: LPM_MULT:mult2
+ 13. lpm_mult Parameter Settings by Entity Instance
+ 14. Post-Synthesis Netlist Statistics for Top Partition
+ 15. Elapsed Time Per Partition
+ 16. Analysis & Synthesis Messages
 
 
 
@@ -45,13 +48,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Apr 24 12:28:23 2020       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 24 13:32:32 2020       ;
 ; Quartus Prime Version           ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                   ; g44_complex_square                          ;
 ; Top-level Entity Name           ; g44_complex_square                          ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 388                                         ;
+; Total registers                 ; 546                                         ;
 ; Total pins                      ; 196                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -165,19 +168,26 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; g44_complex_square.vhd           ; yes             ; User VHDL File  ; C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
+; g44_complex_square.vhd           ; yes             ; User VHDL File               ; C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc      ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
+; multcore.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/multcore.inc        ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/bypassff.inc        ;         ;
+; altshift.inc                     ; yes             ; Megafunction                 ; d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/altshift.inc        ;         ;
+; db/mult_rbn.v                    ; yes             ; Auto-Generated Megafunction  ; C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/db/mult_rbn.v          ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -185,35 +195,39 @@ agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 217         ;
+; Estimate of Logic utilization (ALMs needed) ; 281         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 203         ;
+; Combinational ALUT usage for logic          ; 201         ;
 ;     -- 7 input functions                    ; 0           ;
 ;     -- 6 input functions                    ; 0           ;
 ;     -- 5 input functions                    ; 0           ;
 ;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 203         ;
+;     -- <=3 input functions                  ; 201         ;
 ;                                             ;             ;
-; Dedicated logic registers                   ; 388         ;
+; Dedicated logic registers                   ; 546         ;
 ;                                             ;             ;
 ; I/O pins                                    ; 196         ;
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 9           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; i_clk~input ;
-; Maximum fan-out                             ; 388         ;
-; Total fan-out                               ; 2285        ;
-; Average fan-out                             ; 2.30        ;
+; Maximum fan-out                             ; 546         ;
+; Total fan-out                               ; 2429        ;
+; Average fan-out                             ; 2.12        ;
 +---------------------------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                           ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name        ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
-; |g44_complex_square        ; 203 (203)           ; 388 (388)                 ; 0                 ; 9          ; 196  ; 0            ; |g44_complex_square ; g44_complex_square ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+--------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                        ; Entity Name        ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------------+--------------+
+; |g44_complex_square             ; 201 (109)           ; 546 (288)                 ; 0                 ; 9          ; 196  ; 0            ; |g44_complex_square                                        ; g44_complex_square ; work         ;
+;    |lpm_mult:mult1|             ; 46 (0)              ; 129 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |g44_complex_square|lpm_mult:mult1                         ; lpm_mult           ; work         ;
+;       |mult_rbn:auto_generated| ; 46 (46)             ; 129 (129)                 ; 0                 ; 3          ; 0    ; 0            ; |g44_complex_square|lpm_mult:mult1|mult_rbn:auto_generated ; mult_rbn           ; work         ;
+;    |lpm_mult:mult2|             ; 46 (0)              ; 129 (0)                   ; 0                 ; 3          ; 0    ; 0            ; |g44_complex_square|lpm_mult:mult2                         ; lpm_mult           ; work         ;
+;       |mult_rbn:auto_generated| ; 46 (46)             ; 129 (129)                 ; 0                 ; 3          ; 0    ; 0            ; |g44_complex_square|lpm_mult:mult2|mult_rbn:auto_generated ; mult_rbn           ; work         ;
++---------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -226,314 +240,349 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Sum of two 18x18                  ; 3           ;
 ; Total number of DSP blocks        ; 9           ;
 ;                                   ;             ;
-; Fixed Point Signed Multiplier     ; 3           ;
-; Fixed Point Unsigned Multiplier   ; 3           ;
-; Fixed Point Mixed Sign Multiplier ; 6           ;
+; Fixed Point Signed Multiplier     ; 2           ;
+; Fixed Point Unsigned Multiplier   ; 6           ;
+; Fixed Point Mixed Sign Multiplier ; 4           ;
 +-----------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                               ;
-+-----------------------------------------+----------------------------------------+
-; Register name                           ; Reason for Removal                     ;
-+-----------------------------------------+----------------------------------------+
-; o_yy[0]~reg0                            ; Stuck at GND due to stuck port data_in ;
-; mult_xx[64]                             ; Stuck at GND due to stuck port data_in ;
-; Mult1~mult_ll_pl[0][0]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][17]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][16]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][15]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][14]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][13]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][12]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][11]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][10]                 ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][9]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][8]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][7]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][6]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][5]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][4]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][3]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][2]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][1]                  ; Lost fanout                            ;
-; Mult2~mult_ll_pl[0][0]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][17]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][16]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][15]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][14]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][13]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][12]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][11]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][10]                 ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][9]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][8]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][7]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][6]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][5]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][4]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][3]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][2]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][1]                  ; Lost fanout                            ;
-; Mult0~mult_ll_pl[0][0]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][17]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][16]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][15]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][14]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][13]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][12]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][11]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][10]                 ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][9]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][8]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][7]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][6]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][5]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][4]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][3]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][2]                  ; Lost fanout                            ;
-; Mult1~mult_ll_pl[0][1]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][0]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][0]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][1]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][1]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][2]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][2]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][3]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][3]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][4]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][4]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][5]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][5]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][6]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][6]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][7]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][7]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][8]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][8]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][9]                  ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][9]                  ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][10]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][10]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][11]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][11]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][12]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][12]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][13]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][13]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][14]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][14]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][15]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][15]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][16]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][16]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][17]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][17]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][18]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][18]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][19]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][19]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][20]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][20]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][21]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][21]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][22]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][22]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][23]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][23]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][24]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][24]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][25]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][25]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][26]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][26]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][27]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][27]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][28]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][28]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][29]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][29]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][30]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][30]                 ; Lost fanout                            ;
-; Mult2~mult_lh_pl[0][31]                 ; Lost fanout                            ;
-; Mult2~mult_hl_pl[0][31]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][0]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][0]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][1]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][1]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][2]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][2]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][3]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][3]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][4]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][4]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][5]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][5]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][6]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][6]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][7]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][7]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][8]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][8]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][9]                  ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][9]                  ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][10]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][10]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][11]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][11]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][12]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][12]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][13]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][13]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][14]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][14]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][15]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][15]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][16]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][16]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][17]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][17]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][18]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][18]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][19]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][19]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][20]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][20]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][21]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][21]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][22]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][22]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][23]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][23]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][24]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][24]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][25]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][25]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][26]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][26]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][27]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][27]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][28]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][28]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][29]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][29]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][30]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][30]                 ; Lost fanout                            ;
-; Mult1~mult_lh_pl[0][31]                 ; Lost fanout                            ;
-; Mult1~mult_hl_pl[0][31]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][0]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][0]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][1]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][1]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][2]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][2]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][3]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][3]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][4]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][4]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][5]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][5]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][6]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][6]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][7]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][7]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][8]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][8]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][9]                  ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][9]                  ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][10]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][10]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][11]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][11]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][12]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][12]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][13]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][13]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][14]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][14]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][15]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][15]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][16]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][16]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][17]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][17]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][18]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][18]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][19]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][19]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][20]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][20]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][21]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][21]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][22]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][22]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][23]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][23]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][24]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][24]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][25]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][25]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][26]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][26]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][27]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][27]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][28]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][28]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][29]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][29]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][30]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][30]                 ; Lost fanout                            ;
-; Mult0~mult_lh_pl[0][31]                 ; Lost fanout                            ;
-; Mult0~mult_hl_pl[0][31]                 ; Lost fanout                            ;
-; Mult2~add_lh_hlmac_pl[0][33]            ; Lost fanout                            ;
-; Mult2~add_lh_hlmac_pl[0][34]            ; Lost fanout                            ;
-; Mult2~add_lh_hlmac_pl[0][35]            ; Lost fanout                            ;
-; Mult2~add_lh_hlmac_pl[0][36]            ; Lost fanout                            ;
-; Mult2~add_lh_hlmac_pl[0][37]            ; Lost fanout                            ;
-; Mult1~add_lh_hlmac_pl[0][33]            ; Lost fanout                            ;
-; Mult1~add_lh_hlmac_pl[0][34]            ; Lost fanout                            ;
-; Mult1~add_lh_hlmac_pl[0][35]            ; Lost fanout                            ;
-; Mult1~add_lh_hlmac_pl[0][36]            ; Lost fanout                            ;
-; Mult1~add_lh_hlmac_pl[0][37]            ; Lost fanout                            ;
-; Mult0~add_lh_hlmac_pl[0][33]            ; Lost fanout                            ;
-; Mult0~add_lh_hlmac_pl[0][34]            ; Lost fanout                            ;
-; Mult0~add_lh_hlmac_pl[0][35]            ; Lost fanout                            ;
-; Mult0~add_lh_hlmac_pl[0][36]            ; Lost fanout                            ;
-; Mult0~add_lh_hlmac_pl[0][37]            ; Lost fanout                            ;
-; r_y[0]                                  ; Merged with r_x[0]                     ;
-; r_y[1]                                  ; Merged with r_x[1]                     ;
-; r_y[2]                                  ; Merged with r_x[2]                     ;
-; r_y[3]                                  ; Merged with r_x[3]                     ;
-; r_y[4]                                  ; Merged with r_x[4]                     ;
-; r_y[5]                                  ; Merged with r_x[5]                     ;
-; r_y[6]                                  ; Merged with r_x[6]                     ;
-; r_y[7]                                  ; Merged with r_x[7]                     ;
-; r_y[8]                                  ; Merged with r_x[8]                     ;
-; r_y[9]                                  ; Merged with r_x[9]                     ;
-; r_y[10]                                 ; Merged with r_x[10]                    ;
-; r_y[11]                                 ; Merged with r_x[11]                    ;
-; r_y[12]                                 ; Merged with r_x[12]                    ;
-; r_y[13]                                 ; Merged with r_x[13]                    ;
-; r_y[14]                                 ; Merged with r_x[14]                    ;
-; r_y[15]                                 ; Merged with r_x[15]                    ;
-; r_y[16]                                 ; Merged with r_x[16]                    ;
-; r_y[17]                                 ; Merged with r_x[17]                    ;
-; r_y[18]                                 ; Merged with r_x[18]                    ;
-; r_y[19]                                 ; Merged with r_x[19]                    ;
-; r_y[20]                                 ; Merged with r_x[20]                    ;
-; r_y[21]                                 ; Merged with r_x[21]                    ;
-; r_y[22]                                 ; Merged with r_x[22]                    ;
-; r_y[23]                                 ; Merged with r_x[23]                    ;
-; r_y[24]                                 ; Merged with r_x[24]                    ;
-; r_y[25]                                 ; Merged with r_x[25]                    ;
-; r_y[26]                                 ; Merged with r_x[26]                    ;
-; r_y[27]                                 ; Merged with r_x[27]                    ;
-; r_y[28]                                 ; Merged with r_x[28]                    ;
-; r_y[29]                                 ; Merged with r_x[29]                    ;
-; r_y[30]                                 ; Merged with r_x[30]                    ;
-; r_y[31]                                 ; Merged with r_x[31]                    ;
-; Total Number of Removed Registers = 295 ;                                        ;
-+-----------------------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                           ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal                                                     ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
+; o_yy[0]~reg0                                                        ; Stuck at GND due to stuck port data_in                                 ;
+; o_yy[64]~reg0                                                       ; Stuck at GND due to stuck port data_in                                 ;
+; o_yy[63]~reg0                                                       ; Stuck at GND due to stuck port data_in                                 ;
+; Mult0~mult_ll_pl[0][17]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][16]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][15]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][14]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][13]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][12]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][11]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][10]                                             ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][9]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][8]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][7]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][6]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][5]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][4]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][3]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][2]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][1]                                              ; Lost fanout                                                            ;
+; Mult0~mult_ll_pl[0][0]                                              ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_ll_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][0]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][1]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][2]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][3]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][4]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][5]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][6]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][7]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][8]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][9]       ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][10]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][11]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][12]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][13]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][14]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][15]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][16]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][17]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][18]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][19]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][20]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][21]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][22]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][23]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][24]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][25]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][26]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][27]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][28]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][29]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][30]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_lh_pl[0][31]      ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~mult_hl_pl[0][31]      ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][0]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][0]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][1]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][1]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][2]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][2]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][3]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][3]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][4]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][4]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][5]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][5]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][6]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][6]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][7]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][7]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][8]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][8]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][9]                                              ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][9]                                              ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][10]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][10]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][11]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][11]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][12]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][12]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][13]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][13]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][14]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][14]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][15]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][15]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][16]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][16]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][17]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][17]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][18]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][18]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][19]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][19]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][20]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][20]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][21]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][21]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][22]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][22]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][23]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][23]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][24]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][24]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][25]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][25]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][26]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][26]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][27]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][27]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][28]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][28]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][29]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][29]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][30]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][30]                                             ; Lost fanout                                                            ;
+; Mult0~mult_lh_pl[0][31]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hl_pl[0][31]                                             ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ; Lost fanout                                                            ;
+; lpm_mult:mult1|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][33] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][34] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][35] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][36] ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|Mult0~add_lh_hlmac_pl[0][37] ; Lost fanout                                                            ;
+; Mult0~add_lh_hlmac_pl[0][33]                                        ; Lost fanout                                                            ;
+; Mult0~add_lh_hlmac_pl[0][34]                                        ; Lost fanout                                                            ;
+; Mult0~add_lh_hlmac_pl[0][35]                                        ; Lost fanout                                                            ;
+; Mult0~add_lh_hlmac_pl[0][36]                                        ; Lost fanout                                                            ;
+; Mult0~add_lh_hlmac_pl[0][37]                                        ; Lost fanout                                                            ;
+; Mult0~mult_hh_pl[0][26]                                             ; Lost fanout                                                            ;
+; Mult0~mult_hh_pl[0][27]                                             ; Lost fanout                                                            ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[18]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[19]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[20]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[21]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[22]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[23]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[24]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[25]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[26]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[27]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[28]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[29]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[30]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[31]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[0]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[1]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[2]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[3]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[4]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[5]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[6]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[7]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[8]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[9]           ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[10]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[11]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[12]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[13]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[14]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[15]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[16]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult2|mult_rbn:auto_generated|datab_input_reg[17]          ; Merged with lpm_mult:mult2|mult_rbn:auto_generated|dataa_input_reg[17] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[18]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[18] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[19]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[19] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[20]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[20] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[21]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[21] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[22]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[22] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[23]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[23] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[24]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[24] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[25]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[25] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[26]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[26] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[27]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[27] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[28]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[28] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[29]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[29] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[30]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[30] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[31]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[31] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[0]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[0]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[1]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[1]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[2]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[2]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[3]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[3]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[4]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[4]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[5]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[5]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[6]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[6]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[7]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[7]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[8]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[8]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[9]           ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[9]  ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[10]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[10] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[11]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[11] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[12]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[12] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[13]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[13] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[14]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[14] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[15]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[15] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[16]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[16] ;
+; lpm_mult:mult1|mult_rbn:auto_generated|datab_input_reg[17]          ; Merged with lpm_mult:mult1|mult_rbn:auto_generated|dataa_input_reg[17] ;
+; Total Number of Removed Registers = 330                             ;                                                                        ;
++---------------------------------------------------------------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -541,14 +590,115 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 388   ;
+; Total registers                              ; 546   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 194   ;
+; Number of registers using Asynchronous Clear ; 160   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 194   ;
+; Number of registers using Clock Enable       ; 128   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MULT:mult1                      ;
++------------------------------------------------+-----------+---------------------+
+; Parameter Name                                 ; Value     ; Type                ;
++------------------------------------------------+-----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF       ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 64        ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1         ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 2         ; Signed Integer      ;
+; LATENCY                                        ; 0         ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO        ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO        ; Untyped             ;
+; USE_EAB                                        ; OFF       ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5         ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone V ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL    ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT       ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO      ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0         ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_rbn  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF       ; Untyped             ;
++------------------------------------------------+-----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: LPM_MULT:mult2                      ;
++------------------------------------------------+-----------+---------------------+
+; Parameter Name                                 ; Value     ; Type                ;
++------------------------------------------------+-----------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON        ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF       ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON        ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF       ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHB                                     ; 32        ; Signed Integer      ;
+; LPM_WIDTHP                                     ; 64        ; Signed Integer      ;
+; LPM_WIDTHR                                     ; 0         ; Untyped             ;
+; LPM_WIDTHS                                     ; 1         ; Untyped             ;
+; LPM_REPRESENTATION                             ; SIGNED    ; Untyped             ;
+; LPM_PIPELINE                                   ; 2         ; Signed Integer      ;
+; LATENCY                                        ; 0         ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO        ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; NO        ; Untyped             ;
+; USE_EAB                                        ; OFF       ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5         ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone V ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL    ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT       ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO      ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0         ; Untyped             ;
+; CBXI_PARAMETER                                 ; mult_rbn  ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx        ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF       ; Untyped             ;
++------------------------------------------------+-----------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance         ;
++---------------------------------------+----------------+
+; Name                                  ; Value          ;
++---------------------------------------+----------------+
+; Number of entity instances            ; 2              ;
+; Entity Instance                       ; LPM_MULT:mult1 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
+; Entity Instance                       ; LPM_MULT:mult2 ;
+;     -- LPM_WIDTHA                     ; 32             ;
+;     -- LPM_WIDTHB                     ; 32             ;
+;     -- LPM_WIDTHP                     ; 64             ;
+;     -- LPM_REPRESENTATION             ; SIGNED         ;
+;     -- INPUT_A_IS_CONSTANT            ; NO             ;
+;     -- INPUT_B_IS_CONSTANT            ; NO             ;
+;     -- USE_EAB                        ; OFF            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx             ;
++---------------------------------------+----------------+
 
 
 +-----------------------------------------------------+
@@ -556,12 +706,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 388                         ;
-;     CLR               ; 194                         ;
-;     ENA               ; 194                         ;
-; arriav_lcell_comb     ; 204                         ;
-;     arith             ; 138                         ;
-;         2 data inputs ; 138                         ;
+; arriav_ff             ; 546                         ;
+;     CLR               ; 160                         ;
+;     ENA               ; 128                         ;
+;     plain             ; 258                         ;
+; arriav_lcell_comb     ; 202                         ;
+;     arith             ; 136                         ;
+;         2 data inputs ; 136                         ;
 ;     normal            ; 1                           ;
 ;         0 data inputs ; 1                           ;
 ;     shared            ; 65                          ;
@@ -571,7 +722,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; boundary_port         ; 196                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.40                        ;
-; Average LUT depth     ; 3.40                        ;
+; Average LUT depth     ; 2.60                        ;
 +-----------------------+-----------------------------+
 
 
@@ -590,62 +741,110 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Fri Apr 24 12:28:14 2020
+    Info: Processing started: Fri Apr 24 13:32:23 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off g44_lab4 -c g44_complex_square
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file g44_complex_square.vhd
-    Info (12022): Found design unit 1: g44_complex_square-rtl File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 13
-    Info (12023): Found entity 1: g44_complex_square File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 5
+    Info (12022): Found design unit 1: g44_complex_square-rtl File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 16
+    Info (12023): Found entity 1: g44_complex_square File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 8
 Info (12127): Elaborating entity "g44_complex_square" for the top level hierarchy
+Warning (10631): VHDL Process Statement warning at g44_complex_square.vhd(60): inferring latch(es) for signal or variable "r_x", which holds its previous value in one or more paths through the process File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Warning (10631): VHDL Process Statement warning at g44_complex_square.vhd(60): inferring latch(es) for signal or variable "r_y", which holds its previous value in one or more paths through the process File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[0]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[1]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[2]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[3]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[4]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[5]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[6]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[7]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[8]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[9]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[10]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[11]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[12]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[13]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[14]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[15]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[16]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[17]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[18]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[19]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[20]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[21]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[22]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[23]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[24]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[25]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[26]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[27]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[28]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[29]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[30]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_y[31]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[0]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[1]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[2]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[3]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[4]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[5]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[6]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[7]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[8]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[9]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[10]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[11]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[12]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[13]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[14]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[15]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[16]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[17]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[18]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[19]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[20]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[21]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[22]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[23]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[24]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[25]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[26]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[27]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[28]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[29]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[30]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (10041): Inferred latch for "r_x[31]" at g44_complex_square.vhd(60) File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 60
+Info (12128): Elaborating entity "LPM_MULT" for hierarchy "LPM_MULT:mult1" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 42
+Info (12130): Elaborated megafunction instantiation "LPM_MULT:mult1" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 42
+Info (12133): Instantiated megafunction "LPM_MULT:mult1" with the following parameter: File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 42
+    Info (12134): Parameter "LPM_WIDTHA" = "32"
+    Info (12134): Parameter "LPM_WIDTHB" = "32"
+    Info (12134): Parameter "LPM_WIDTHP" = "64"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_PIPELINE" = "2"
+    Info (12134): Parameter "LPM_TYPE" = "LPM_MULT"
+    Info (12134): Parameter "LPM_HINT" = "UNUSED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/mult_rbn.v
+    Info (12023): Found entity 1: mult_rbn File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/db/mult_rbn.v Line: 29
+Info (12128): Elaborating entity "mult_rbn" for hierarchy "LPM_MULT:mult1|mult_rbn:auto_generated" File: d:/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 377
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "o_yy[0]" is stuck at GND File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 23
+    Warning (13410): Pin "o_yy[0]" is stuck at GND File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 62
+    Warning (13410): Pin "o_yy[63]" is stuck at GND File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 62
+    Warning (13410): Pin "o_yy[64]" is stuck at GND File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 62
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 261 registers lost all their fanouts during netlist optimizations.
+Info (17049): 263 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 32 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "i_y[0]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[1]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[2]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[3]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[4]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[5]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[6]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[7]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[8]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[9]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[10]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[11]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[12]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[13]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[14]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[15]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[16]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[17]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[18]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[19]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[20]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[21]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[22]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[23]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[24]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[25]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[26]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[27]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[28]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[29]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[30]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-    Warning (15610): No output dependent on input pin "i_y[31]" File: C:/Users/Wombat/Documents/GitHub/ECSE-325-Lab/Lab_4/g44_complex_square.vhd Line: 9
-Info (21057): Implemented 731 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 795 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 66 input pins
     Info (21059): Implemented 130 output pins
-    Info (21061): Implemented 526 logic cells
+    Info (21061): Implemented 590 logic cells
     Info (21062): Implemented 9 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 36 warnings
-    Info: Peak virtual memory: 4872 megabytes
-    Info: Processing ended: Fri Apr 24 12:28:23 2020
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4897 megabytes
+    Info: Processing ended: Fri Apr 24 13:32:32 2020
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Total CPU time (on all processors): 00:00:17
 
 

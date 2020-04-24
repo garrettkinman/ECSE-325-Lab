@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Fri Apr 24 12:28:23 2020
+Analysis & Synthesis Status : Successful - Fri Apr 24 13:32:32 2020
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : g44_complex_square
 Top-level Entity Name : g44_complex_square
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 388
+Total registers : 546
 Total pins : 196
 Total virtual pins : 0
 Total block memory bits : 0
