@@ -13,6 +13,8 @@ end g44_complex_square;
 architecture rtl of g44_complex_square is
 
     signal r_x, r_y : signed(31 downto 0);
+    signal mult_xx  : signed(64 downto 0);
+    signal mult_yy  : signed(63 downto 0);
 
 begin
 
@@ -26,7 +28,9 @@ begin
         elsif (rising_edge(i_clk)) then
             r_x <= signed(i_x);
             r_y <= signed(i_x);
-            o_xx <= std_logic_vector(('0' & (r_x * r_x)) - r_y * r_y);
+            mult_xx <= '0' & (r_x * r_x);
+            mult_yy <= r_y * r_y;
+            o_xx <= std_logic_vector(mult_xx - mult_yy);
             o_yy <= std_logic_vector(r_x * r_y & '0');
         end if;
     end process p_mult;
