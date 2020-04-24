@@ -3,10 +3,10 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity g44_complex_square is
-    port(   i_clk   : in    std_logic;
-            i_rstb  : in    std_logic;
-            i_x     : in    std_logic_vector(31 downto 0);
-            i_y     : in    std_logic_vector(31 downto 0);
+    port(   i_clk       : in    std_logic;
+            i_rstb      : in    std_logic;
+            i_x         : in    std_logic_vector(31 downto 0);
+            i_y         : in    std_logic_vector(31 downto 0);
             o_xx, o_yy  : out   std_logic_vector(64 downto 0));
 end g44_complex_square;
 
