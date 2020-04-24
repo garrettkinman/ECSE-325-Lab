@@ -512,6 +512,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_yy[63]",
+					"strict" : false
+				},
+				{
+					"name" : "o_yy[64]",
+					"strict" : false
+				},
+				{
 					"name" : "i_clk",
 					"strict" : false
 				},

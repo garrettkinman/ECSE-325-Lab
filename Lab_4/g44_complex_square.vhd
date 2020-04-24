@@ -15,9 +15,10 @@ end g44_complex_square;
 
 architecture rtl of g44_complex_square is
 
-    signal r_x, r_y : signed(31 downto 0);
+    --signal r_x, r_y : signed(31 downto 0);
     signal mult_xx  : std_logic_vector(63 downto 0);
     signal mult_yy  : std_logic_vector(63 downto 0);
+    signal mult_xy  : std_logic_vector(63 downto 0);
     signal xx       : signed(63 downto 0);
     signal yy       : signed(63 downto 0);
 
@@ -44,7 +45,7 @@ begin
         LPM_WIDTHB => 32,
         LPM_WIDTHP => 64,
         LPM_REPRESENTATION => "SIGNED",
-        LPM_PIPELINE => 2
+        LPM_PIPELINE => 4
         )
         port map ( DATAA => i_x, DATAB => i_x, CLOCK => i_clk, RESULT => mult_xx );
 
@@ -53,22 +54,36 @@ begin
         LPM_WIDTHB => 32,
         LPM_WIDTHP => 64,
         LPM_REPRESENTATION => "SIGNED",
-        LPM_PIPELINE => 2
+        LPM_PIPELINE => 4
         )
         port map ( DATAA => i_y, DATAB => i_y, CLOCK => i_clk, RESULT => mult_yy );
+
+    mult3 : LPM_MULT generic map (
+        LPM_WIDTHA => 32,
+        LPM_WIDTHB => 32,
+        LPM_WIDTHP => 64,
+        LPM_REPRESENTATION => "SIGNED",
+        LPM_PIPELINE => 4
+        )
+        port map ( DATAA => i_x, DATAB => i_y, CLOCK => i_clk, RESULT => mult_xy );
 
     p_mult : process(i_clk, i_rstb)
     begin
         if (i_rstb = '0') then
             o_xx <= (others => '0');
             o_yy <= (others => '0');
-            r_x <= (others => '0');
-            r_y <= (others => '0');
+            --r_x <= (others => '0');
+            --r_y <= (others => '0');
+            --mult_xx <= (others => '0');
+            --mult_yy <= (others => '0');
+            xx <= (others => '0');
+            yy <= (others => '0');
         elsif (rising_edge(i_clk)) then
             xx <= signed(mult_xx);
             yy <= signed(mult_yy);
             o_xx <= std_logic_vector('0' & xx - yy);
-            o_yy <= std_logic_vector(r_x * r_y & '0');
+            --o_yy <= std_logic_vector(r_x * r_y & '0');
+            o_yy <= (mult_xy & '0');
         end if;
     end process p_mult;
 
